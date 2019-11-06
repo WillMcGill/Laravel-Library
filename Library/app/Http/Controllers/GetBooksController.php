@@ -25,7 +25,7 @@ class GetBooksController extends Controller{
             ->get();
         }
         
-    
+        
         return view('data', [
             'data'=>$data
         ]);

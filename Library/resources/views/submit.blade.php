@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Search Results</div>
+                <div class="card-header">You've Successfully Added A New Book!</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        Hello World
+                        {{ $book }}
                         <br><br><br>
                         
                         <a href= '/home'><button>Go Back</button></a>
