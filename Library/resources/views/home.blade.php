@@ -12,7 +12,7 @@
 
                     <form action="data\">
                         Title:<br>
-                        <input type="text" name="title">
+                        <input type="text" name="title" >
                         <br>
                         Author:<br>
                         <input type="text" name="author">
@@ -34,14 +34,14 @@
 
                     <form action="submit\{title}{author}{genre}">
                         Title:<br>
-                        <input type="text" name="title" required>
+                        <input type="text" name="title" required value="{{old('title') }}">
                         <br>
                         Author:<br>
-                        <input type="text" name="author" required>
+                        <input type="text" name="author" required value="{{old('author') }}">
                         <br>
                         Genre:
                         <br>
-                        <input type="text" name="genre" required>
+                        <input type="text" name="genre" required value="{{old('genre') }}">
                         <br><br>
                         <input type="submit" value="Submit">
                       </form> 

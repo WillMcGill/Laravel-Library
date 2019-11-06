@@ -32,10 +32,3 @@ class GetBooksController extends Controller
     }
 }
 
-// getData();
-
-// function data(){
-        
-//     return view('data');
-
-// }

@@ -16,15 +16,19 @@
                     @endif
                     <table class="table">
                         <thead>
+                            <th scope="col">Book ID</th>
                             <th scope="col">Title</th>
                             <th scope="col">Author</th>
                             <th scope="col">Genre</th>
+                            <th scope="col">Status</th>
                         </thead>
                         @foreach ($data as $book)
                         <tr>
+                            <td>{{$book->id}}</td>
                             <td>{{$book->title}}</td>
                             <td>{{$book->author}}</td>
                             <td>{{$book->genre}}</td>
+                            <td><a href = "/checkout/{{$book->id}}">Check Me Out</a></td>
                         </tr>
                         @endforeach
                   
