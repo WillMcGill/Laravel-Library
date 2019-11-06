@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        {{ $data }}
+                        Hello World
                         <br><br><br>
                         
                         <a href= '/home'><button>Go Back</button></a>
