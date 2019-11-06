@@ -11,21 +11,20 @@ class GetBooksController extends Controller{
         $title = request('title');
         $author = request('author');
 
-        if (!$author){
+        if (!$author && $title){
             $data = \DB::table('books')->where('title','like', $title)->get();
         }
 
-        if (!$title){
+        if (!$title && $author){
             $data = \DB::table('books')->where('author','like', $author)->get();
         }
     
-        else{
+        if($title && $author){
             $data = \DB::table('books')->where('author','like', $author)
             ->where('title','like', $title)
             ->get();
         }
         
-        //dd($data);
     
         return view('data', [
             'data'=>$data
