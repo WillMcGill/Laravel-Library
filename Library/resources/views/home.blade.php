@@ -34,14 +34,14 @@
 
                     <form action="submit\{title}{author}{genre}">
                         Title:<br>
-                        <input type="text" name="title">
+                        <input type="text" name="title" required>
                         <br>
                         Author:<br>
-                        <input type="text" name="author">
+                        <input type="text" name="author" required>
                         <br>
                         Genre:
                         <br>
-                        <input type="text" name="genre">
+                        <input type="text" name="genre" required>
                         <br><br>
                         <input type="submit" value="Submit">
                       </form> 

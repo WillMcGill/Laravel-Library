@@ -12,10 +12,24 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
+
                     @endif
-                        {{ $data }}
-                        <br><br><br>
-                        
+                    <table class="table">
+                        <thead>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Genre</th>
+                        </thead>
+                        @foreach ($data as $book)
+                        <tr>
+                            <td>{{$book->title}}</td>
+                            <td>{{$book->author}}</td>
+                            <td>{{$book->genre}}</td>
+                        </tr>
+                        @endforeach
+                  
+                    </table>
+
                         <a href= '/home'><button>Go Back</button></a>
                 </div>
             </div>
