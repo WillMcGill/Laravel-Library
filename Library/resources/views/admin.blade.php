@@ -37,7 +37,7 @@
                   
                     </table>
 
-                        <a href= '/admin'><button>Go Back</button></a>
+                        <a href= '/home'><button>Go Back</button></a>
                 </div>
             </div>
         </div>

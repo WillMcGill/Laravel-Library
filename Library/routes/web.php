@@ -23,3 +23,4 @@ Route::get('/submit/{title}{author}{genre}' , 'AddController@writeData')->name('
 Route::get('/checkout/{id}' , 'CheckoutController@updateStatus')->name('update');
 Route::get('/admin' , 'AdminController@admin');
 Route::get('/admin/{id}' , 'AdminController@returnBook');
+Route::get('/import' , 'ImportController@importBooks');
