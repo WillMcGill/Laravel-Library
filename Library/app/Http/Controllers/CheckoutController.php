@@ -9,12 +9,7 @@ use Illuminate\Http\Request;
 class CheckoutController extends Controller
 {
     function updateStatus(){
-        
-        $bookID = request('id');
-        $userID = Auth::user()->id;
-
-        echo ($bookID);
-        echo ($userID);
+ 
 
         $newCheckout = new Checkout();
 
@@ -24,5 +19,9 @@ class CheckoutController extends Controller
         $newCheckout->duedate = date("Y-m-d");
 
         $newCheckout->save();
+
+        $latestCheckout = \DB::table('books')->latest()->get();
+
+        return view ('checkout', ['newCheckout'=> $latestCheckout]);
     }
 }
