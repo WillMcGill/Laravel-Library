@@ -66,7 +66,7 @@
 
                         <form action="import\">
                            
-                                <input type="submit" value="Import Books">
+                                <a href = "/data"><input type="submit" value="Import Books"></a>
                             
                         </form> 
 
