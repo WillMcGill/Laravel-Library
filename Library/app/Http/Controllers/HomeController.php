@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         $data = DB::table('users')->where('id' , Auth::user()->id)->get();
         
-        return view('home', ['admin'=>$data]);
+        return view('home', ['user'=>$data[0]]);
     }
 
     function importBooks(){

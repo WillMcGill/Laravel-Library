@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
+
+
 @section('content')
+
+@if ( {{ $user->admin }} == 1)
+
+{{ $display = "" }}
+
+@endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -24,14 +33,16 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
+
+    
+    <div class="row justify-content-center ">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Add A Book</div>
 
                 <div class="card-body">
                    
-
+                    
                     <form action="submit\{title}{author}{genre}">
                         Title:<br>
                         <input type="text" name="title" required value="{{old('title') }}">
@@ -50,18 +61,15 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center {{$display}}">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Admin</div>
     
                     <div class="card-body">
                        
-    
                         <form action="admin\">
-                           
                             <input type="submit" value="Check In">
-                        
                         </form> 
 
                         <form action="import\">
@@ -69,15 +77,10 @@
                                 <a href = "/data"><input type="submit" value="Import Books"></a>
                             
                         </form> 
-
-                        <form action="users\">
-                           
-                                <input type="submit" value="Users">
-                            
-                        </form> 
                     </div>
                 </div>
             </div>
         </div>
 </div>
+
 @endsection
