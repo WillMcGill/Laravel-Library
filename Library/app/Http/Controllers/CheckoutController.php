@@ -20,7 +20,11 @@ class CheckoutController extends Controller
 
         $newCheckout->save();
 
-        $latestCheckout = \DB::table('books')->latest()->get();
+        $latestCheckout = \DB::table('checkouts')->latest()->get();
+        $userCheckout = \DB::table('users')
+            ->where('id' , $newCheckout->user_id)
+            ->get('first_name');
+        dd($userCheckout);
 
         return view ('checkout', ['newCheckout'=> $latestCheckout]);
     }
