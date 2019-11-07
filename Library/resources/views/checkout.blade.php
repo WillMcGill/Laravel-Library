@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">You've Successfully Checked Out!</div>
+                <div class="card-header">Success!</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{$newCheckout}}
+                    {{$userCheckout}}, You've Successfully Checked Out {{$bookCheckout}}!
+                    {{-- {{$newCheckout}} --}}
                     {{-- <table class="table">
                             <thead>
                                 <th scope="col">Book ID</th>
