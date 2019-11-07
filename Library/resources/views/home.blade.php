@@ -49,5 +49,22 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Admin</div>
+    
+                    <div class="card-body">
+                       
+    
+                        <form action="admin\">
+                           
+                            <input type="submit" value="Enter">
+                          </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 @endsection
