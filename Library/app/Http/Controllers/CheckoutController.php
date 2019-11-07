@@ -6,11 +6,17 @@ use App\Checkout;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class CheckoutController extends Controller
 {
     function updateStatus(){
- 
+ //make sure book isnt already checked out
 
+        // if(\DB::table('books')->where('id' , request('id'))
+        //     ->get('enabled') == null){
+           
+            
         $newCheckout = new Checkout();
 
         $newCheckout->user_id = Auth::user()->id;
@@ -20,21 +26,23 @@ class CheckoutController extends Controller
 
         $newCheckout->save();
 
-        //$latestCheckout = \DB::table('checkouts')->latest()->get();
+        DB::table('books')->where('id', request('id'))
+        ->update(['enabled'=> 1]);
+
 
         $userCheckout = \DB::table('users')
             ->where('id' , $newCheckout->user_id)
-            ->get('first_name');
-        //dd($userCheckout);
+            ->pluck('first_name');
+       
 
         $bookCheckout = \DB::table('books')
             ->where('id' , $newCheckout->book_id)
-            ->get('title');
-        //dd($bookCheckout);
+            ->pluck('title');
 
-     
-
-        return view ('checkout', ['userCheckout'=> $userCheckout], 
-                                ['bookCheckout'=> $bookCheckout]);
+        return view ('checkout', [  'userCheckout'=> $userCheckout,
+                                    'bookCheckout'=> $bookCheckout
+                                    ]);
+    
     }
+  
 }
