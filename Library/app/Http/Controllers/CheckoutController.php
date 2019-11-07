@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Checkout;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -21,8 +22,8 @@ class CheckoutController extends Controller
 
         $newCheckout->user_id = Auth::user()->id;
         $newCheckout->book_id = request('id');
-        $newCheckout->checkout = date("Y-m-d");
-        $newCheckout->duedate = date("Y-m-d");
+        $newCheckout->checkout = Carbon::now();
+        $newCheckout->duedate = Carbon::now()->addDays(30);
 
         $newCheckout->save();
 
