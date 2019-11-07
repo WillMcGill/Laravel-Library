@@ -13,6 +13,10 @@ class CheckoutController extends Controller
     function updateStatus(){
  //make sure book isnt already checked out
 
+        // if(\DB::table('books')->where('id' , request('id'))
+        //     ->get('enabled') == null){
+           
+            
         $newCheckout = new Checkout();
 
         $newCheckout->user_id = Auth::user()->id;
@@ -38,7 +42,7 @@ class CheckoutController extends Controller
         return view ('checkout', [  'userCheckout'=> $userCheckout,
                                     'bookCheckout'=> $bookCheckout
                                     ]);
+    
     }
-
   
 }
