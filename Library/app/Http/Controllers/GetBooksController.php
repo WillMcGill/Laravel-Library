@@ -14,12 +14,12 @@ class GetBooksController extends Controller
         $author = request('author');
 
         if (!$author && $title) {
-            $data = \DB::table('books')->where('title', 'like', $title)->get();
+            $data = \DB::table('books')->where('title', 'like', '%'.$title.'%')->get();
         } else if (!$title && $author) {
-            $data = \DB::table('books')->where('author', 'like', $author)->get();
+            $data = \DB::table('books')->where('author', 'like', '%'.$author.'%')->get();
         } else if ($title && $author) {
-            $data = \DB::table('books')->where('author', 'like', $author)
-                ->where('title', 'like', $title)
+            $data = \DB::table('books')->where('author', 'like', '%'.$author,'%')
+                ->where('title', 'like', '%'.$title.'%')
                 ->get();
         } else {
             $data = \DB::table('books')->get();

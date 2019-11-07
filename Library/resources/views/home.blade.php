@@ -36,7 +36,7 @@
                         Title:<br>
                         <input type="text" name="title" required value="{{old('title') }}">
                         <br>
-                        Author:<br>
+                        Author<br>
                         <input type="text" name="author" required value="{{old('author') }}">
                         <br>
                         Genre:

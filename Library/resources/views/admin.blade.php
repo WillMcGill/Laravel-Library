@@ -16,8 +16,8 @@
                     @endif
                     <table class="table">
                         <thead>
-                            <th scope="col">Title</th>
-                            <th scope="col">Card Holder</th>
+                            <th scope="col">Book Id</th>
+                            <th scope="col">Card Holder ID</th>
                             <th scope="col">Checkout Date</th>
                             <th scope="col">Due Date</th>
                             <th score="col">Return Book</th>
