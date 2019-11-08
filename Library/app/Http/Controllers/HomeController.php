@@ -62,12 +62,13 @@ class HomeController extends Controller
             $book = new Book();
             $book->title = $newBook->volumeInfo->title;
 
-        if ($newBook->volumeInfo->authors[0] == null){
-            $book->author = "unknown";
+        if (isset($newBook->volumeInfo->authors[0])){
+            $book->author = $newBook->volumeInfo->authors[0];
+            
             }
 
         else {
-            $book->author = $newBook->volumeInfo->authors[0];
+            $book->author = "unknown";
              };
 
         if (isset($newBook->volumeInfo->categories[0])){
