@@ -29,8 +29,15 @@ class HomeController extends Controller
     public function index()
     {
         $data = DB::table('users')->where('id' , Auth::user()->id)->get();
+
+        if ($data[0]->admin == 1){
+            $display = null;
+        }
+        else { 
+            $display = "d-none";
+        };
         
-        return view('home', ['user'=>$data[0]]);
+        return view('home', ['display'=>$display]);
     }
 
     function importBooks(){

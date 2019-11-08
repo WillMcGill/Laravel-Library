@@ -1,14 +1,8 @@
 @extends('layouts.app')
 
-
-
 @section('content')
 
-@if ( {{ $user->admin }} == 1)
 
-{{ $display = "" }}
-
-@endif
 
 <div class="container">
     <div class="row justify-content-center">
@@ -35,7 +29,8 @@
 
 
     
-    <div class="row justify-content-center ">
+    <div class="row justify-content-center">
+            <div class="row justify-content-center ">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Add A Book</div>
@@ -61,7 +56,7 @@
         </div>
     </div>
 
-    <div class="row justify-content-center {{$display}}">
+    <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Admin</div>
@@ -72,7 +67,7 @@
                             <input type="submit" value="Check In">
                         </form> 
 
-                        <form action="import\">
+                        <form action="/import">
                            
                                 <a href = "/data"><input type="submit" value="Import Books"></a>
                             
