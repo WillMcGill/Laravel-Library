@@ -30,7 +30,7 @@
 
     
     <div class="container">
-            <div class="row justify-content-center {{$display}}">
+            <div class="row justify-content-center {{$display ?? ''}}">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Add A Book</div>
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <div class="row justify-content-center {{$display}}">
+    <div class="row justify-content-center {{$display ?? ''}}">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Admin</div>

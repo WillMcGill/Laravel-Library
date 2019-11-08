@@ -13,9 +13,6 @@ class CheckoutController extends Controller
 {
     function updateStatus(){
  //make sure book isnt already checked out
-
-        // if(\DB::table('books')->where('id' , request('id'))
-        //     ->get('enabled') == null){
            
             
         $newCheckout = new Checkout();
