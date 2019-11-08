@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        {{ $book }}
+                        {{ $book->title }} has been added.
                         <br><br><br>
                         
                         <a href= '/home'><button>Go Back</button></a>
